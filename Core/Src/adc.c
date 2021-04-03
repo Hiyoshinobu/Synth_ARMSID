@@ -22,6 +22,12 @@
 
 /* USER CODE BEGIN 0 */
 
+int get_adc_value(ADC_HandleTypeDef hadc, uint16_t timeout = 1000)
+{
+	if(HAL_ADC_PollForConversion(&hadc, timeout) == HAL_OK)
+		ADC_Value = HAL_ADC_GetValue(&hadc);
+}
+
 /* USER CODE END 0 */
 
 ADC_HandleTypeDef hadc;

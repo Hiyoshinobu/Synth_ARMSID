@@ -29,5 +29,33 @@ void ecrire_data(uint8_t data)
 	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, (data >> 7) & 1);
 }
 
+void start() // Modifie le chip select pour arreter l'envoie de donnees
+{
+	HAL_GPIO_WritePin(CS_GPIO_Port, CS_Pin, 1);
+}
+
+void stop() // Modifie le chip select pour arreter l'envoie de donnees
+{
+	HAL_GPIO_WritePin(CS_GPIO_Port, CS_Pin, 0);
+}
+
+
+void set_read() // Modifier RW + parametres de GPIO de D0-D7 en lecture
+{
+	HAL_GPIO_WritePin(RW_GPIO_Port, RW_Pin, 0); // ARMSID est en ecriture, donc 0
+}
+
+void set_write() // Modifier RW + parametres de GPIO de D0-D7 en ecriture
+{
+	HAL_GPIO_WritePin(RW_GPIO_Port, RW_Pin, 1); // ARMSID est en lecture, donc 1
+}
+
+
+
+
+
+
+
+
 
 

@@ -34,7 +34,7 @@ extern "C" {
 extern ADC_HandleTypeDef hadc;
 
 /* USER CODE BEGIN Private defines */
-
+int get_adc_value(ADC_HandleTypeDef hadc, uint16_t timeout = 1000);
 /* USER CODE END Private defines */
 
 void MX_ADC_Init(void);

@@ -92,7 +92,7 @@ int main(void)
   MX_TIM17_Init();
   MX_USB_PCD_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_Base_Start(htim17);
   /* USER CODE END 2 */
 
   /* Infinite loop */
